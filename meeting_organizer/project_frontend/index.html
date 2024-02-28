@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meeting Organizer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="container is-max-desktop">
+        <div class="notification is-primary mt-5 has-text-centered">
+            <strong>Meeting Organizer</strong>
+        </div>
+    </div>
+
+
+    <div class="container is-max-desktop mt-5">
+    <div class="columns is-multiline">
+        <div class="column is-5 ">
+            <div class="container is-max-desktop mt-5">
+                <div class="notification is-secondary has-text-centered">
+                    <strong>Active Meetings</strong>
+                </div>
+
+                <div>
+                    <aside class="menu">
+                        <ul class="menu-list">
+                            <li>
+                                <ul id="active-meetings-list">
+                                </ul>
+                            </li>
+                        </ul>
+      
+                    </aside>
+                    
+                </div>
+                <div class="has-text-centered mt-5">
+                    <button class="button is-primary is-active" onclick="openCreateMeetingContainer()">Create</button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-7">
+            <div class="container is-max-desktop mt-5 meeting-detail-container is-hidden">
+                <div class="notification is-secondary has-text-centered">
+                    <strong>Meeting Detail</strong>
+                </div>
+
+                <div>
+                    <aside class="menu">
+                        <ul class="menu-list">
+                            <li>
+                                <ul id="selected-meeting-detail">
+                                    
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a class="is-active has-text-centered"><span id="participants-count"></span> Participants</a>
+                                        <ul id="participant-list">
+                                
+                                        </ul>
+                                        <div class="process-box">
+                                            <div id="update-participant-box" class="is-active has-text-centered">
+                                            </div>
+                                            <div id="delete-participant-box" class="is-active has-text-centered">
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
+                
+                </div>
+
+            </div>
+            <div class="container is-max-desktop mt-5 create-meeting-container is-hidden">
+                <div class="notification is-secondary has-text-centered">
+                    <strong>Create New Meeting</strong>
+                </div>
+
+                <div>
+                    <form onsubmit="return false">
+                        <div class="field">
+                            <label class="label">Host</label>
+                            <div class="control">
+                                <input class="input" type="text" id="host" name="host" value="Manager" style="background-color: #dbd8d8;" readonly>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Topic</label>
+                            <div class="control">
+                                <input class="input" type="text" id="topic" name="topic" placeholder="Enter Topic" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Meeting Day</label>
+                            <div class="control">
+                                <input class="input" type="date" id="meeting_day" name="meeting_day" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Starting Time</label>
+                            <div class="control">
+                                <input class="input" type="time" id="starting_time" name="starting_time" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">End Time</label>
+                            <div class="control">
+                                <input class="input" type="time" id="end_time" name="end_time" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Participants</label>
+                            <div class="control">
+
+                                <select class="input participant-form-select" value="" id="participants" name="participants" multiple required>
+                                 
+                                </select>
+                            </div>
+                        </div>
+                        <button class="button is-primary is-active" onclick="createMeeting()">Create</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+       
+    </div>
+    </div>
+
+    <script src="main.js"></script>
+
+
+
+</body>
+
+</html>

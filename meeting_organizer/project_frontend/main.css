@@ -1,0 +1,39 @@
+.menu-list ul {
+    display: inline-grid;
+    width: 100%;
+    justify-items: center;
+}
+
+.menu-list ul li {
+    margin-top: 2px;
+    cursor: pointer;
+    ;
+}
+
+.meeting-code-hover:hover {
+    color: #00d1b2
+}
+
+.participant-form-select {
+    min-height: 150px;
+
+}
+
+#participant-list {
+    border: none !important;
+    padding-left: 0 !important;
+    margin: 10% 0%;
+}
+
+.process-box {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#update_topic,
+#update_meeting_day,
+#update_starting_time,
+#update_end_time {
+    cursor: cell;
+}
