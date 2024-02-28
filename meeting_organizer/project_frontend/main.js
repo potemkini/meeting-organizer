@@ -63,12 +63,12 @@ function fetchMeetingDetail(meetingId) {
     
     document.getElementById("participants-count").innerHTML += participantsOfMeetingArray.length
 
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Meeting Code: <strong>" + targetMeetingArray.meeting_code + "</strong></a></li>";
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Topic: <strong contenteditable='true' id='update_topic'>" + targetMeetingArray.topic + "</strong></a></li>";
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Meeting Day: <strong contenteditable='true' id='update_meeting_day'>" + targetMeetingArray.meeting_day + "</strong></a></li>";
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Starting Time: <strong contenteditable='true' id='update_starting_time'>" + targetMeetingArray.start_time + "</strong></a></li>";
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>End Time: <strong contenteditable='true' id='update_end_time'>" + targetMeetingArray.end_time + "</strong></a></li>";
-    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Created By: <strong>" + targetMeetingArray.created_by + "</strong></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Meeting Code: <strong>" + targetMeetingArray.meeting_code + "</strong><span class='edit-symbol'>&nbsp &#x26D4;</span></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Topic: <strong contenteditable='true' id='update_topic'>" + targetMeetingArray.topic + "</strong> <span class='edit-symbol'>&nbsp &#9997;</span></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Meeting Day: <strong contenteditable='true' id='update_meeting_day'>" + targetMeetingArray.meeting_day + "</strong><span class='edit-symbol'>&nbsp &#9997;</span></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Starting Time: <strong contenteditable='true' id='update_starting_time'>" + targetMeetingArray.start_time + "</strong><span class='edit-symbol'>&nbsp &#9997;</span></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>End Time: <strong contenteditable='true' id='update_end_time'>" + targetMeetingArray.end_time + "</strong><span class='edit-symbol'>&nbsp &#9997;</span></a></li>";
+    document.getElementById("selected-meeting-detail").innerHTML += "<li ><a>Created By: <strong>" + targetMeetingArray.created_by + "</strong><span class='edit-symbol'>&nbsp &#x26D4;</span></a></li>";
     for (var i = 0; i < participantsOfMeetingArray.length; i++) {
         document.getElementById("participant-list").innerHTML += "<li><a>" + participantsOfMeetingArray[i] + "</a></li>";
     }
@@ -140,6 +140,8 @@ async function createMeeting() {
 
     if (response.status == 200 ) {
         console.log(response.message)
+        window.location.reload()
+
     } else {
         console.log(response.message)
         window.location.reload()
@@ -181,6 +183,8 @@ async function updateMeeting(meeting_id) {
 
     if (response.status == 200) {
         console.log(response.message)
+        window.location.reload()
+
     } else {
         console.log(response.message)
         window.location.reload()
@@ -202,7 +206,7 @@ async function deleteMeeting(meeting_id) {
 
     if (response.status == 200) {
         console.log(response.message)
-        // window.location.reload()
+        window.location.reload()
     }
 
 }

@@ -37,3 +37,11 @@
 #update_end_time {
     cursor: cell;
 }
+
+.edit-symbol {
+    visibility: hidden;
+}
+
+#selected-meeting-detail a:hover .edit-symbol {
+    visibility: visible !important;
+}
